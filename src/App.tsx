@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Chevron from "./components/Chevron";
 import { items } from "./data";
 import Pagination from "./components/Pagination";
+import SingleAd from "./components/SingleAd";
 
 const App = () => {
   const advertRef = useRef<Map<string | number, HTMLElement> | null>(null);
@@ -64,8 +65,7 @@ const App = () => {
               ad.id !== 1 && "fully-center"
             } relative shrink-0 w-full h-fit`}
           >
-            <div className="absolute left-0 bg-gradient-to-t from-[#1F263880] to-transparent top-0 w-full h-full" />
-            <img src={ad.img} alt="advert banner image" />
+            <SingleAd ad={ad} />
           </div>
         ))}
       </div>
